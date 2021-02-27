@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,11 +17,17 @@
 		5D836D8525EAA956002DE605 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836D8425EAA956002DE605 /* LoginViewController.swift */; };
 		5D836D8925EAAA51002DE605 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836D8825EAAA51002DE605 /* SignUpViewController.swift */; };
 		5D836D8C25EAB186002DE605 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D836D8B25EAB186002DE605 /* GoogleService-Info.plist */; };
-		9ADBD6B8E1DC9C87EB83A918 /* Pods_PokemonTeams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 884EBA82BD102517D8390896 /* Pods_PokemonTeams.framework */; };
+		5D836DA025EAB5AF002DE605 /* FirebaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836D9F25EAB5AF002DE605 /* FirebaseAuthProvider.swift */; };
+		5D836DA425EAB5E1002DE605 /* AuthProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DA325EAB5E1002DE605 /* AuthProviding.swift */; };
+		5D836DA825EAB68C002DE605 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DA725EAB68C002DE605 /* LoginResponse.swift */; };
+		5D836DAC25EAB8F1002DE605 /* RegisterResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DAB25EAB8F1002DE605 /* RegisterResponses.swift */; };
+		5D836DAF25EAB94B002DE605 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DAE25EAB94B002DE605 /* User.swift */; };
+		5D836DB425EAC1A4002DE605 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DB325EAC1A4002DE605 /* LoginViewModel.swift */; };
+		5D836DD025EACE20002DE605 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DCF25EACE20002DE605 /* RegisterViewModel.swift */; };
+		E8679561CAAFDA31C3582977 /* Pods_PokemonTeams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A51FAA3B6E96D7A7AA905A5 /* Pods_PokemonTeams.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C151265B5EA9759018140C4 /* Pods-PokemonTeams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonTeams.release.xcconfig"; path = "Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams.release.xcconfig"; sourceTree = "<group>"; };
 		5D5EAB6D25EA947B00F8C5D6 /* PokemonTeams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonTeams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5EAB7025EA947B00F8C5D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D5EAB7225EA947B00F8C5D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,8 +40,16 @@
 		5D836D8425EAA956002DE605 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5D836D8825EAAA51002DE605 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5D836D8B25EAB186002DE605 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		884EBA82BD102517D8390896 /* Pods_PokemonTeams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonTeams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8FCBB55D3C9FEEBED76DCED /* Pods-PokemonTeams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonTeams.debug.xcconfig"; path = "Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams.debug.xcconfig"; sourceTree = "<group>"; };
+		5D836D9F25EAB5AF002DE605 /* FirebaseAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthProvider.swift; sourceTree = "<group>"; };
+		5D836DA325EAB5E1002DE605 /* AuthProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProviding.swift; sourceTree = "<group>"; };
+		5D836DA725EAB68C002DE605 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		5D836DAB25EAB8F1002DE605 /* RegisterResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponses.swift; sourceTree = "<group>"; };
+		5D836DAE25EAB94B002DE605 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5D836DB325EAC1A4002DE605 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5D836DCF25EACE20002DE605 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		5EE30CD62338DEEF800BB9CD /* Pods-PokemonTeams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonTeams.release.xcconfig"; path = "Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams.release.xcconfig"; sourceTree = "<group>"; };
+		7A51FAA3B6E96D7A7AA905A5 /* Pods_PokemonTeams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonTeams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD97816581C51F9FFFB31A7B /* Pods-PokemonTeams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonTeams.debug.xcconfig"; path = "Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,28 +57,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ADBD6B8E1DC9C87EB83A918 /* Pods_PokemonTeams.framework in Frameworks */,
+				E8679561CAAFDA31C3582977 /* Pods_PokemonTeams.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4B5FC6485EAC23897A057C11 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				884EBA82BD102517D8390896 /* Pods_PokemonTeams.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		5D5EAB6425EA947B00F8C5D6 = {
 			isa = PBXGroup;
 			children = (
 				5D5EAB6F25EA947B00F8C5D6 /* PokemonTeams */,
 				5D5EAB6E25EA947B00F8C5D6 /* Products */,
 				8BBF465D5AFDBC6045B7FEBE /* Pods */,
-				4B5FC6485EAC23897A057C11 /* Frameworks */,
+				DBBFF205D2BA442A377484A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,8 +88,9 @@
 				5D5EAB7025EA947B00F8C5D6 /* AppDelegate.swift */,
 				5D5EAB7225EA947B00F8C5D6 /* SceneDelegate.swift */,
 				5D5EAB8B25EA9EE100F8C5D6 /* Views */,
-				5D5EAB8C25EA9EE600F8C5D6 /* View Model */,
 				5D5EAB8D25EA9EEE00F8C5D6 /* View Controllers */,
+				5D836DB125EAC177002DE605 /* ViewModels */,
+				5D5EAB8C25EA9EE600F8C5D6 /* Model */,
 				5D5EAB8A25EA9ED900F8C5D6 /* Data */,
 				5D5EAB8525EA99B500F8C5D6 /* Supporting Files */,
 				5D5EAB7925EA947C00F8C5D6 /* Assets.xcassets */,
@@ -112,6 +119,8 @@
 		5D5EAB8A25EA9ED900F8C5D6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5D836D9F25EAB5AF002DE605 /* FirebaseAuthProvider.swift */,
+				5D836DA325EAB5E1002DE605 /* AuthProviding.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -125,11 +134,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5D5EAB8C25EA9EE600F8C5D6 /* View Model */ = {
+		5D5EAB8C25EA9EE600F8C5D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5D836DA725EAB68C002DE605 /* LoginResponse.swift */,
+				5D836DAB25EAB8F1002DE605 /* RegisterResponses.swift */,
+				5D836DAE25EAB94B002DE605 /* User.swift */,
 			);
-			path = "View Model";
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5D5EAB8D25EA9EEE00F8C5D6 /* View Controllers */ = {
@@ -142,14 +154,30 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		5D836DB125EAC177002DE605 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5D836DB325EAC1A4002DE605 /* LoginViewModel.swift */,
+				5D836DCF25EACE20002DE605 /* RegisterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		8BBF465D5AFDBC6045B7FEBE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C8FCBB55D3C9FEEBED76DCED /* Pods-PokemonTeams.debug.xcconfig */,
-				2C151265B5EA9759018140C4 /* Pods-PokemonTeams.release.xcconfig */,
+				AD97816581C51F9FFFB31A7B /* Pods-PokemonTeams.debug.xcconfig */,
+				5EE30CD62338DEEF800BB9CD /* Pods-PokemonTeams.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DBBFF205D2BA442A377484A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7A51FAA3B6E96D7A7AA905A5 /* Pods_PokemonTeams.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,11 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D5EAB8125EA947C00F8C5D6 /* Build configuration list for PBXNativeTarget "PokemonTeams" */;
 			buildPhases = (
-				4DB479CA48CD67B8F7E70042 /* [CP] Check Pods Manifest.lock */,
+				1FA92792C018825C744F5224 /* [CP] Check Pods Manifest.lock */,
 				5D5EAB6925EA947B00F8C5D6 /* Sources */,
 				5D5EAB6A25EA947B00F8C5D6 /* Frameworks */,
 				5D5EAB6B25EA947B00F8C5D6 /* Resources */,
-				661E5D9F783CFCC37276A8F4 /* [CP] Embed Pods Frameworks */,
+				030B8B1CF843F48F129E76C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,7 +249,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4DB479CA48CD67B8F7E70042 /* [CP] Check Pods Manifest.lock */ = {
+		030B8B1CF843F48F129E76C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1FA92792C018825C744F5224 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -243,23 +288,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		661E5D9F783CFCC37276A8F4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -268,11 +296,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D836D8925EAAA51002DE605 /* SignUpViewController.swift in Sources */,
+				5D836DA025EAB5AF002DE605 /* FirebaseAuthProvider.swift in Sources */,
+				5D836DA825EAB68C002DE605 /* LoginResponse.swift in Sources */,
+				5D836DA425EAB5E1002DE605 /* AuthProviding.swift in Sources */,
 				5D5EAB7525EA947B00F8C5D6 /* ViewController.swift in Sources */,
+				5D836DAC25EAB8F1002DE605 /* RegisterResponses.swift in Sources */,
 				5D5EAB7125EA947B00F8C5D6 /* AppDelegate.swift in Sources */,
 				5D5EAB8825EA99C800F8C5D6 /* UIView+Extension.swift in Sources */,
+				5D836DD025EACE20002DE605 /* RegisterViewModel.swift in Sources */,
+				5D836DB425EAC1A4002DE605 /* LoginViewModel.swift in Sources */,
 				5D836D8525EAA956002DE605 /* LoginViewController.swift in Sources */,
 				5D5EAB7325EA947B00F8C5D6 /* SceneDelegate.swift in Sources */,
+				5D836DAF25EAB94B002DE605 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +451,7 @@
 		};
 		5D5EAB8225EA947C00F8C5D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8FCBB55D3C9FEEBED76DCED /* Pods-PokemonTeams.debug.xcconfig */;
+			baseConfigurationReference = AD97816581C51F9FFFB31A7B /* Pods-PokemonTeams.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -436,7 +471,7 @@
 		};
 		5D5EAB8325EA947C00F8C5D6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C151265B5EA9759018140C4 /* Pods-PokemonTeams.release.xcconfig */;
+			baseConfigurationReference = 5EE30CD62338DEEF800BB9CD /* Pods-PokemonTeams.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
