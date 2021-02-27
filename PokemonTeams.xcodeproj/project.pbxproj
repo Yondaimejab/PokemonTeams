@@ -14,6 +14,8 @@
 		5D5EAB7A25EA947C00F8C5D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5EAB7925EA947C00F8C5D6 /* Assets.xcassets */; };
 		5D5EAB7D25EA947C00F8C5D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D5EAB7B25EA947C00F8C5D6 /* LaunchScreen.storyboard */; };
 		5D5EAB8825EA99C800F8C5D6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5EAB8725EA99C800F8C5D6 /* UIView+Extension.swift */; };
+		5D836D8525EAA956002DE605 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836D8425EAA956002DE605 /* LoginViewController.swift */; };
+		5D836D8925EAAA51002DE605 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836D8825EAAA51002DE605 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		5D5EAB7C25EA947C00F8C5D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D5EAB7E25EA947C00F8C5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D5EAB8725EA99C800F8C5D6 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		5D836D8425EAA956002DE605 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5D836D8825EAAA51002DE605 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				5D5EAB7425EA947B00F8C5D6 /* ViewController.swift */,
+				5D836D8425EAA956002DE605 /* LoginViewController.swift */,
+				5D836D8825EAAA51002DE605 /* SignUpViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -188,9 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D836D8925EAAA51002DE605 /* SignUpViewController.swift in Sources */,
 				5D5EAB7525EA947B00F8C5D6 /* ViewController.swift in Sources */,
 				5D5EAB7125EA947B00F8C5D6 /* AppDelegate.swift in Sources */,
 				5D5EAB8825EA99C800F8C5D6 /* UIView+Extension.swift in Sources */,
+				5D836D8525EAA956002DE605 /* LoginViewController.swift in Sources */,
 				5D5EAB7325EA947B00F8C5D6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

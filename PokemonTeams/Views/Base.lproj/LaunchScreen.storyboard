@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pokemon_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ui3-yu-XZ6">
-                                <rect key="frame" x="0.0" y="134.5" width="414" height="179"/>
+                                <rect key="frame" x="0.0" y="313.5" width="414" height="179"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="179" id="3Hq-UV-rJq"/>
                                 </constraints>
@@ -31,7 +31,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="cst-AV-gBQ" secondAttribute="trailing" id="L1s-NC-7nh"/>
                             <constraint firstItem="cst-AV-gBQ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="YbD-Yr-K3y"/>
-                            <constraint firstItem="ui3-yu-XZ6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.5" id="c8t-KN-Yen"/>
+                            <constraint firstItem="ui3-yu-XZ6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.9" id="c8t-KN-Yen"/>
                             <constraint firstItem="cst-AV-gBQ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="dI1-qV-C7O"/>
                             <constraint firstItem="ui3-yu-XZ6" firstAttribute="width" secondItem="cst-AV-gBQ" secondAttribute="width" id="hXw-Gh-caY"/>
                             <constraint firstAttribute="bottom" secondItem="cst-AV-gBQ" secondAttribute="bottom" id="pl5-cO-PMf"/>
