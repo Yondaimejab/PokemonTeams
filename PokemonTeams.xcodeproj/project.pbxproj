@@ -13,6 +13,7 @@
 		5D5EAB7825EA947B00F8C5D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D5EAB7625EA947B00F8C5D6 /* Main.storyboard */; };
 		5D5EAB7A25EA947C00F8C5D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D5EAB7925EA947C00F8C5D6 /* Assets.xcassets */; };
 		5D5EAB7D25EA947C00F8C5D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D5EAB7B25EA947C00F8C5D6 /* LaunchScreen.storyboard */; };
+		5D5EAB8825EA99C800F8C5D6 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5EAB8725EA99C800F8C5D6 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5D5EAB7925EA947C00F8C5D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D5EAB7C25EA947C00F8C5D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D5EAB7E25EA947C00F8C5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D5EAB8725EA99C800F8C5D6 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,62 @@
 			children = (
 				5D5EAB7025EA947B00F8C5D6 /* AppDelegate.swift */,
 				5D5EAB7225EA947B00F8C5D6 /* SceneDelegate.swift */,
-				5D5EAB7425EA947B00F8C5D6 /* ViewController.swift */,
-				5D5EAB7625EA947B00F8C5D6 /* Main.storyboard */,
+				5D5EAB8B25EA9EE100F8C5D6 /* Views */,
+				5D5EAB8C25EA9EE600F8C5D6 /* View Model */,
+				5D5EAB8D25EA9EEE00F8C5D6 /* View Controllers */,
+				5D5EAB8A25EA9ED900F8C5D6 /* Data */,
+				5D5EAB8525EA99B500F8C5D6 /* Supporting Files */,
 				5D5EAB7925EA947C00F8C5D6 /* Assets.xcassets */,
-				5D5EAB7B25EA947C00F8C5D6 /* LaunchScreen.storyboard */,
 				5D5EAB7E25EA947C00F8C5D6 /* Info.plist */,
 			);
 			path = PokemonTeams;
+			sourceTree = "<group>";
+		};
+		5D5EAB8525EA99B500F8C5D6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5D5EAB8625EA99BB00F8C5D6 /* Extension */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D5EAB8625EA99BB00F8C5D6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5D5EAB8725EA99C800F8C5D6 /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5D5EAB8A25EA9ED900F8C5D6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5D5EAB8B25EA9EE100F8C5D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D5EAB7625EA947B00F8C5D6 /* Main.storyboard */,
+				5D5EAB7B25EA947C00F8C5D6 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5D5EAB8C25EA9EE600F8C5D6 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		5D5EAB8D25EA9EEE00F8C5D6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D5EAB7425EA947B00F8C5D6 /* ViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +190,7 @@
 			files = (
 				5D5EAB7525EA947B00F8C5D6 /* ViewController.swift in Sources */,
 				5D5EAB7125EA947B00F8C5D6 /* AppDelegate.swift in Sources */,
+				5D5EAB8825EA99C800F8C5D6 /* UIView+Extension.swift in Sources */,
 				5D5EAB7325EA947B00F8C5D6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
