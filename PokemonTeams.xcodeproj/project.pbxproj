@@ -24,6 +24,12 @@
 		5D836DAF25EAB94B002DE605 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DAE25EAB94B002DE605 /* User.swift */; };
 		5D836DB425EAC1A4002DE605 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DB325EAC1A4002DE605 /* LoginViewModel.swift */; };
 		5D836DD025EACE20002DE605 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DCF25EACE20002DE605 /* RegisterViewModel.swift */; };
+		5D836DD325EAF7F1002DE605 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DD225EAF7F1002DE605 /* HomeViewController.swift */; };
+		5D836DDF25EAFA09002DE605 /* PokemonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DDE25EAFA09002DE605 /* PokemonCollectionViewCell.swift */; };
+		5D836DF925EB02A2002DE605 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DF825EB02A2002DE605 /* Pokemon.swift */; };
+		5D836DFC25EB0349002DE605 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DFB25EB0349002DE605 /* UIImageView+Extension.swift */; };
+		5D836E1725EB09DD002DE605 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836E1625EB09DD002DE605 /* HomeViewModel.swift */; };
+		5D836E3525EB4F1B002DE605 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836E3425EB4F1A002DE605 /* Keychain.swift */; };
 		E8679561CAAFDA31C3582977 /* Pods_PokemonTeams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A51FAA3B6E96D7A7AA905A5 /* Pods_PokemonTeams.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +53,12 @@
 		5D836DAE25EAB94B002DE605 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5D836DB325EAC1A4002DE605 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		5D836DCF25EACE20002DE605 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		5D836DD225EAF7F1002DE605 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5D836DDE25EAFA09002DE605 /* PokemonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCollectionViewCell.swift; sourceTree = "<group>"; };
+		5D836DF825EB02A2002DE605 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		5D836DFB25EB0349002DE605 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		5D836E1625EB09DD002DE605 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5D836E3425EB4F1A002DE605 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		5EE30CD62338DEEF800BB9CD /* Pods-PokemonTeams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonTeams.release.xcconfig"; path = "Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams.release.xcconfig"; sourceTree = "<group>"; };
 		7A51FAA3B6E96D7A7AA905A5 /* Pods_PokemonTeams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonTeams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD97816581C51F9FFFB31A7B /* Pods-PokemonTeams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonTeams.debug.xcconfig"; path = "Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +116,7 @@
 			children = (
 				5D5EAB8625EA99BB00F8C5D6 /* Extension */,
 				5D836D8B25EAB186002DE605 /* GoogleService-Info.plist */,
+				5D836E3425EB4F1A002DE605 /* Keychain.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -111,6 +124,7 @@
 		5D5EAB8625EA99BB00F8C5D6 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5D836DFB25EB0349002DE605 /* UIImageView+Extension.swift */,
 				5D5EAB8725EA99C800F8C5D6 /* UIView+Extension.swift */,
 			);
 			path = Extension;
@@ -128,6 +142,7 @@
 		5D5EAB8B25EA9EE100F8C5D6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5D836DD525EAF9C4002DE605 /* Custom Views */,
 				5D5EAB7625EA947B00F8C5D6 /* Main.storyboard */,
 				5D5EAB7B25EA947C00F8C5D6 /* LaunchScreen.storyboard */,
 			);
@@ -140,6 +155,7 @@
 				5D836DA725EAB68C002DE605 /* LoginResponse.swift */,
 				5D836DAB25EAB8F1002DE605 /* RegisterResponses.swift */,
 				5D836DAE25EAB94B002DE605 /* User.swift */,
+				5D836DF825EB02A2002DE605 /* Pokemon.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,6 +166,7 @@
 				5D5EAB7425EA947B00F8C5D6 /* ViewController.swift */,
 				5D836D8425EAA956002DE605 /* LoginViewController.swift */,
 				5D836D8825EAAA51002DE605 /* SignUpViewController.swift */,
+				5D836DD225EAF7F1002DE605 /* HomeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -159,8 +176,17 @@
 			children = (
 				5D836DB325EAC1A4002DE605 /* LoginViewModel.swift */,
 				5D836DCF25EACE20002DE605 /* RegisterViewModel.swift */,
+				5D836E1625EB09DD002DE605 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5D836DD525EAF9C4002DE605 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D836DDE25EAFA09002DE605 /* PokemonCollectionViewCell.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		8BBF465D5AFDBC6045B7FEBE /* Pods */ = {
@@ -296,17 +322,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D836D8925EAAA51002DE605 /* SignUpViewController.swift in Sources */,
+				5D836E1725EB09DD002DE605 /* HomeViewModel.swift in Sources */,
+				5D836DF925EB02A2002DE605 /* Pokemon.swift in Sources */,
 				5D836DA025EAB5AF002DE605 /* FirebaseAuthProvider.swift in Sources */,
 				5D836DA825EAB68C002DE605 /* LoginResponse.swift in Sources */,
 				5D836DA425EAB5E1002DE605 /* AuthProviding.swift in Sources */,
 				5D5EAB7525EA947B00F8C5D6 /* ViewController.swift in Sources */,
+				5D836DD325EAF7F1002DE605 /* HomeViewController.swift in Sources */,
 				5D836DAC25EAB8F1002DE605 /* RegisterResponses.swift in Sources */,
 				5D5EAB7125EA947B00F8C5D6 /* AppDelegate.swift in Sources */,
 				5D5EAB8825EA99C800F8C5D6 /* UIView+Extension.swift in Sources */,
+				5D836E3525EB4F1B002DE605 /* Keychain.swift in Sources */,
 				5D836DD025EACE20002DE605 /* RegisterViewModel.swift in Sources */,
 				5D836DB425EAC1A4002DE605 /* LoginViewModel.swift in Sources */,
 				5D836D8525EAA956002DE605 /* LoginViewController.swift in Sources */,
 				5D5EAB7325EA947B00F8C5D6 /* SceneDelegate.swift in Sources */,
+				5D836DDF25EAFA09002DE605 /* PokemonCollectionViewCell.swift in Sources */,
+				5D836DFC25EB0349002DE605 /* UIImageView+Extension.swift in Sources */,
 				5D836DAF25EAB94B002DE605 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,8 @@ class ViewController: UIViewController {
 
     @Published var didEndAnimation = false
     var animationSubscriber: AnyCancellable?
+    var loginViewModel = LoginViewModel()
+    var loginSubscriber: AnyCancellable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,7 @@ class ViewController: UIViewController {
 
         self.centerYLogoConstraint.constant = 0.5
 
-        UIView.animate(withDuration: 5.0) {
+        UIView.animate(withDuration: 1.0) {
             self.view.layoutIfNeeded()
         } completion: { [weak self] (_) in
             self?.didEndAnimation = true
@@ -50,11 +52,20 @@ class ViewController: UIViewController {
     }
 
     private func validateLogin() {
-        var isUserLogged = false
-
-        if isUserLogged {
-            performSegue(withIdentifier: Constants.homeSegueIdentifier, sender: self)
-        }else {
+        let keychain = Keychain()
+        if let data = keychain.getData(for: Keychain.Constants.userKey) {
+            if let user = try? JSONDecoder().decode(User.self, from: data) {
+                loginSubscriber = loginViewModel.login(user: user.email, password: user.password)
+                    .sink(receiveValue: {[weak self] (response) in
+                    guard let self = self else { return }
+                    if response.success {
+                        self.performSegue(withIdentifier: Constants.homeSegueIdentifier, sender: self)
+                    } else {
+                        self.performSegue(withIdentifier: Constants.loginSegueIdentifier, sender: self)
+                    }
+                })
+            }
+        } else {
             performSegue(withIdentifier: Constants.loginSegueIdentifier, sender: self)
         }
     }

@@ -13,5 +13,6 @@ target 'PokemonTeams' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'FirebaseFirestoreSwift'
+  pod 'Anchorage'
 
 end

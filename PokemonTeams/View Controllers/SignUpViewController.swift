@@ -62,20 +62,28 @@ class SignUpViewController: UIViewController {
     }
 
     private func validateFields() -> Bool {
+        // TODO validate Fields
         return true
     }
 
     private func handleRegisterResponse(for response: RegisterResponse) {
         if response.success {
+            if let successResponse = response as? SuccessRegisterResponse {
+                let keychain = Keychain()
+                keychain.saveValues(with: [Keychain.Constants.userKey: successResponse.user])
+            }
+
             let alertController = UIAlertController(title: Constants.successAlertTitle, message: response.message, preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "A la aplicación.", style: .default) { [weak self] (_) in
                 self?.presentMainTabbar()
             }
+
             alertController.addAction(alertAction)
             self.present(alertController, animated: true, completion: nil)
         } else {
             let alertController = UIAlertController(title: Constants.failAlertTitle, message: response.message, preferredStyle: .alert)
             let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+
             alertController.addAction(alertAction)
             self.present(alertController, animated: true, completion: nil)
         }

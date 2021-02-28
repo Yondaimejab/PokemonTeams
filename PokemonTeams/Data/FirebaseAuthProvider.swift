@@ -17,9 +17,21 @@ class FirebaseAuthProvider: AuthProviding {
     func login(email: String, password: String, completion: @escaping (LoginResponse) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             if let error = error {
-                completion(LoginResponse(success: false, message: error.localizedDescription))
+                completion(FailLoginResponse(success: false, message: error.localizedDescription))
             } else {
-                completion(LoginResponse(success: true, message: Constants.successLoginMessage))
+                let firebaseDb = Firestore.firestore()
+                firebaseDb.collection("Users").getDocuments { (query, error) in
+                    if let error = error {
+                        completion(FailLoginResponse(success: false, message: error.localizedDescription))
+                    } else {
+                        let userDocument = query?.documents.first { ($0.get("id") as! String) == authResult!.user.uid }
+                        let id = userDocument?.get("id") as! String
+                        let name = userDocument?.get("Name") as! String
+                        let lastName = userDocument?.get("lastName") as! String
+                        let user = User(id: id, name: name, lastName: lastName, email: email, password: password)
+                        completion(SuccessLoginResponse(success: true, message: Constants.successLoginMessage, user: user))
+                    }
+                }
             }
         }
     }
@@ -43,7 +55,7 @@ class FirebaseAuthProvider: AuthProviding {
                     }
                 }
 
-                let user = User(id: authResult?.user.uid ?? "1", name: name, lastName: lastName, email: email)
+                let user = User(id: authResult?.user.uid ?? "1", name: name, lastName: lastName, email: email, password: password)
                 completion(SuccessRegisterResponse(success: true, message: Constants.successRegisterMessage, user: user))
             }
         }
