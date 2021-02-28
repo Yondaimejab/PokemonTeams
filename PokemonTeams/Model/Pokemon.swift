@@ -7,33 +7,80 @@
 
 import Foundation
 
-struct Pokemon: Hashable {
-    var id: String
+struct PokemonResponse: Codable {
     var name: String
-    var description: String
-    var imageString: String
+    var url: String
+}
 
-    var imageURL: URL? {
-        get {
-            return URL(string: imageString)
+struct Pokemon: Hashable, Codable {
+    var id: String?
+    var name: String
+    var sprites: Sprite
+    var types: [PokemonType]
+
+    var imageUrl: URL? {
+        if let frontUrl = URL(string: sprites.frontImageUrl ?? "") {
+            return frontUrl
+        } else if let backUrl = URL(string: sprites.backImageURL ?? "") {
+            return backUrl
+
         }
+        return nil
     }
 
-    init(name: String, description: String, imageString: String) {
-        self.name = name
-        self.description = description
-        self.imageString = imageString
-        self.id = UUID().uuidString
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case sprites
+        case types
     }
 
-    init(id: String, name: String, description: String, imageString: String) {
-        self.name = name
-        self.description = description
-        self.imageString = imageString
-        self.id = id
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        let pokemonName = try container.decode(String.self, forKey: .name)
+        let pokemonSprites = try container.decode(Sprite.self, forKey: .sprites)
+        let pokemonTypes = try container.decode([PokemonType].self, forKey: .types)
+
+        self.id = "\(try container.decode(Int.self, forKey: .id))"
+        self.name = pokemonName
+        self.sprites = pokemonSprites
+        self.types = pokemonTypes
     }
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
+
+    static func == (lhs: Pokemon, rhs: Pokemon) -> Bool {
+       return lhs.id == rhs.id
+    }
+}
+
+class Sprite: Codable {
+    var frontImageUrl: String?
+    var backImageURL: String?
+
+    enum CodingKeys: String, CodingKey {
+        case frontImageUrl = "front_default"
+        case backImageURL = "back_default"
+    }
+
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let backImage = try? container.decode(String.self, forKey: .backImageURL)
+        let frontImage = try? container.decode(String.self, forKey: .frontImageUrl)
+        self.frontImageUrl = frontImage
+        self.backImageURL = backImage
+    }
+}
+
+class PokemonType: Codable {
+    var slot: Int
+    var type: Type
+}
+
+class Type: Codable {
+    var name: String
+    var url: String
 }

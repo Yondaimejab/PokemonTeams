@@ -17,8 +17,6 @@ class PokemonCollectionViewCell: UICollectionViewCell {
 
     let pokemonImageView = UIImageView()
     let pokemonNameLabel = UILabel()
-    let pokemonDescripcion = UILabel()
-    let stackview = UIStackView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,8 +35,8 @@ class PokemonCollectionViewCell: UICollectionViewCell {
 
     func bindto(pokemon: Pokemon) {
         self.pokemonNameLabel.text = pokemon.name
-        self.pokemonDescripcion.text = pokemon.description
-        self.pokemonImageView.loadImageFrom(url: pokemon.imageURL)
+        self.pokemonImageView.loadImageFrom(url: pokemon.imageUrl)
+        self.addShadowToImage()
     }
 
     // Private
@@ -47,31 +45,36 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         self.cornerRadius = 10
         self.pokemonImageView.cornerRadius = 10
         self.pokemonImageView.layer.masksToBounds = true
-        self.pokemonDescripcion.numberOfLines = 3
-        self.pokemonDescripcion.lineBreakMode = .byTruncatingTail
+        self.pokemonNameLabel.textAlignment = .center
         pokemonNameLabel.font = .systemFont(ofSize: 16)
-        pokemonDescripcion.font = .systemFont(ofSize: 12)
-        pokemonDescripcion.textColor = .lightGray
-        stackview.axis = .vertical
-        stackview.spacing = 10
     }
 
     private func buildInterface() {
         self.addSubview(pokemonImageView)
-        self.addSubview(stackview)
-        stackview.addArrangedSubview(pokemonNameLabel)
-        stackview.addArrangedSubview(pokemonDescripcion)
+        self.addSubview(pokemonNameLabel)
     }
 
     private func setupDefaultLayout() {
-        pokemonImageView.bottomAnchor == self.centerYAnchor
         pokemonImageView.centerXAnchor == self.centerXAnchor
-        pokemonImageView.heightAnchor == self.heightAnchor * 0.5
+        pokemonImageView.centerYAnchor == self.centerYAnchor
+        pokemonImageView.heightAnchor == self.heightAnchor * 0.6
 
-        stackview.topAnchor == pokemonImageView.bottomAnchor + 8
-        stackview.leadingAnchor == self.leadingAnchor + Constants.horizontalMargin
-        stackview.trailingAnchor == self.trailingAnchor - Constants.horizontalMargin
-        stackview.bottomAnchor == self.bottomAnchor - 8
+        pokemonNameLabel.topAnchor == self.topAnchor
+        pokemonNameLabel.leadingAnchor == self.leadingAnchor + Constants.horizontalMargin
+        pokemonNameLabel.trailingAnchor == self.trailingAnchor - Constants.horizontalMargin
         pokemonNameLabel.heightAnchor == 12.0
     }
+
+    func addShadowToImage() {
+        let width: CGFloat = 200
+        let heght: CGFloat = 200
+        let shadowSize: CGFloat = 20
+        let contactRect = CGRect(x: -shadowSize, y: heght - (shadowSize * 0.4), width: width + shadowSize * 2, height: shadowSize)
+        pokemonImageView.layer.shadowColor = UIColor.black.cgColor
+        pokemonImageView.layer.shadowPath = UIBezierPath(ovalIn: contactRect).cgPath
+        pokemonImageView.layer.shadowRadius = 5
+        pokemonImageView.layer.shadowOpacity = 1
+        pokemonImageView.layer.masksToBounds = true
+    }
 }
+

@@ -286,13 +286,13 @@
         <!--Home View Controller-->
         <scene sceneID="rqy-YY-ptD">
             <objects>
-                <viewController id="0SO-Pf-zcu" customClass="HomeViewController" customModule="PokemonTeams" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="0SO-Pf-zcu" customClass="HomeViewController" customModule="PokemonTeams" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dml-YU-fzg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c7i-U9-b4p">
-                                <rect key="frame" x="0.0" y="157.5" width="414" height="601.5"/>
+                                <rect key="frame" x="0.0" y="163" width="414" height="596"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oI7-fM-DVH">
                                     <size key="itemSize" width="128" height="128"/>
@@ -312,12 +312,12 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63M-CZ-EHl">
-                                <rect key="frame" x="20" y="71" width="290" height="66.5"/>
+                                <rect key="frame" x="20" y="71" width="290" height="72"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Explora la variedad de pokemon.">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="30" name=".SFNS-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="30"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -431,7 +431,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="6em-QR-pFD">
             <objects>
-                <tabBarController storyboardIdentifier="mainTabbar" automaticallyAdjustsScrollViewInsets="NO" id="3lO-il-vXv" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabbar" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="3lO-il-vXv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="fde-Ub-9Uk"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DIO-px-PgC">
@@ -451,7 +451,7 @@
         <!--Home-->
         <scene sceneID="2Cq-a5-pxJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q8y-1k-PSs" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Q8y-1k-PSs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home_unselected_icon" selectedImage="home_icon" id="AOQ-2T-Us9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xdq-qy-f3v">

@@ -28,6 +28,8 @@ class HomeViewController: UIViewController {
     var dataSource: PokemonDataSource!
     var homeViewModel = HomeViewModel()
     var pokemonSubscriber: AnyCancellable?
+    var actvityIndicator = UIRefreshControl()
+    var shouldRefreshPokemons = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,14 +42,24 @@ class HomeViewController: UIViewController {
 
         setupCollectionView()
 
-        pokemonSubscriber = homeViewModel.$pokemons.sink { [weak self] (pokemonList) in
+        pokemonSubscriber = homeViewModel.$pokemons.receive(on: RunLoop.main).sink { [weak self] (pokemonList) in
             guard let self = self else {return}
             self.updateDataSource(with: pokemonList)
             // TODO: remove activity indicator when active
         }
 
-        homeViewModel.getPokemons()
         // TODO: add activity indicator
+        getNextPokemons()
+        collectionView.refreshControl = actvityIndicator
+        collectionView.delegate = self
+    }
+
+    func getNextPokemons() {
+        homeViewModel.getNextPokemons()
+    }
+
+    func getPreviusPokemos() -> Bool {
+        return homeViewModel.getPreviusPokemons()
     }
 
     private func setupCollectionView() {
@@ -75,7 +87,10 @@ class HomeViewController: UIViewController {
         var snapShot = NSDiffableDataSourceSnapshot<Section, Pokemon>()
         snapShot.appendSections([.main])
         snapShot.appendItems(pokemonList, toSection: .main)
-        dataSource.apply(snapShot, animatingDifferences: true)
+        dataSource.apply(snapShot, animatingDifferences: true) {
+            self.shouldRefreshPokemons = true
+            self.actvityIndicator.endRefreshing()
+        }
     }
 
     private func createCollectionViewLayout() -> UICollectionViewCompositionalLayout {
@@ -84,13 +99,37 @@ class HomeViewController: UIViewController {
 
             let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(1)))
 
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5)), subitem: item, count: 2)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.3)), subitem: item, count: 2)
 
             group.contentInsets.bottom = 12
 
             let section = NSCollectionLayoutSection(group: group)
             return section
 
+        }
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let height = scrollView.frame.size.height
+        let contentYoffset = scrollView.contentOffset.y
+        let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+
+        if distanceFromBottom < height {
+            if shouldRefreshPokemons {
+                shouldRefreshPokemons = false
+                self.getNextPokemons()
+                actvityIndicator.beginRefreshing()
+            }
+        } else if contentYoffset < -100 {
+            if shouldRefreshPokemons {
+                shouldRefreshPokemons = false
+                if self.getPreviusPokemos() {
+                    actvityIndicator.beginRefreshing()
+                    shouldRefreshPokemons = true
+                }
+            }
         }
     }
 }
