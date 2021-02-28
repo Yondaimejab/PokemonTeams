@@ -48,6 +48,13 @@ struct Pokemon: Hashable, Codable {
         self.types = pokemonTypes
     }
 
+    init(id: String, name: String, sprites: Sprite, types: [PokemonType]) {
+        self.id = id
+        self.name = name
+        self.sprites = sprites
+        self.types = types
+    }
+
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
@@ -73,14 +80,29 @@ class Sprite: Codable {
         self.frontImageUrl = frontImage
         self.backImageURL = backImage
     }
+
+    init(front: String, back: String) {
+        self.backImageURL = front
+        self.frontImageUrl = back
+    }
 }
 
 class PokemonType: Codable {
     var slot: Int
     var type: Type
+
+    init(slot: Int, type: Type) {
+        self.slot = slot
+        self.type = type
+    }
 }
 
 class Type: Codable {
     var name: String
     var url: String
+
+    init(name: String, url: String) {
+        self.name = name
+        self.url = url
+    }
 }

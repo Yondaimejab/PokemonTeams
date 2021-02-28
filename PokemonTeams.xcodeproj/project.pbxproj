@@ -20,6 +20,12 @@
 		5D74DBCF25EBCB3600C45554 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D74DBCE25EBCB3600C45554 /* URL+Extension.swift */; };
 		5D74DBD325EC0ED200C45554 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D74DBD225EC0ED200C45554 /* Teams.swift */; };
 		5D74DBD825EC10A500C45554 /* TeamsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D74DBD725EC10A500C45554 /* TeamsTableViewCell.swift */; };
+		5D74DBDD25EC173400C45554 /* TeamsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D74DBDC25EC173400C45554 /* TeamsListViewController.swift */; };
+		5D74DBE425EC1AE800C45554 /* FirestoreTeamDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D74DBE325EC1AE800C45554 /* FirestoreTeamDataProvider.swift */; };
+		5D74DBE825EC1E6E00C45554 /* CreateTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D74DBE725EC1E6E00C45554 /* CreateTeamsViewController.swift */; };
+		5D74DBEB25EC1EAA00C45554 /* TeamsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D74DBEA25EC1EAA00C45554 /* TeamsDetailsViewController.swift */; };
+		5D74DBEE25EC313500C45554 /* CreateTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D74DBED25EC313500C45554 /* CreateTeamViewModel.swift */; };
+		5D74DBF225EC33A600C45554 /* TeamDataProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D74DBF125EC33A600C45554 /* TeamDataProviding.swift */; };
 		5D836D8525EAA956002DE605 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836D8425EAA956002DE605 /* LoginViewController.swift */; };
 		5D836D8925EAAA51002DE605 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836D8825EAAA51002DE605 /* SignUpViewController.swift */; };
 		5D836D8C25EAB186002DE605 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D836D8B25EAB186002DE605 /* GoogleService-Info.plist */; };
@@ -55,6 +61,12 @@
 		5D74DBCE25EBCB3600C45554 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		5D74DBD225EC0ED200C45554 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		5D74DBD725EC10A500C45554 /* TeamsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsTableViewCell.swift; sourceTree = "<group>"; };
+		5D74DBDC25EC173400C45554 /* TeamsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsListViewController.swift; sourceTree = "<group>"; };
+		5D74DBE325EC1AE800C45554 /* FirestoreTeamDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreTeamDataProvider.swift; sourceTree = "<group>"; };
+		5D74DBE725EC1E6E00C45554 /* CreateTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamsViewController.swift; sourceTree = "<group>"; };
+		5D74DBEA25EC1EAA00C45554 /* TeamsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsDetailsViewController.swift; sourceTree = "<group>"; };
+		5D74DBED25EC313500C45554 /* CreateTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamViewModel.swift; sourceTree = "<group>"; };
+		5D74DBF125EC33A600C45554 /* TeamDataProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDataProviding.swift; sourceTree = "<group>"; };
 		5D836D8425EAA956002DE605 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5D836D8825EAAA51002DE605 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		5D836D8B25EAB186002DE605 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -146,11 +158,11 @@
 		5D5EAB8A25EA9ED900F8C5D6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5D74DBE025EC1A9B00C45554 /* Protocols */,
 				5D74DBB225EBB96900C45554 /* Networking */,
 				5D836D9F25EAB5AF002DE605 /* FirebaseAuthProvider.swift */,
-				5D836DA325EAB5E1002DE605 /* AuthProviding.swift */,
-				5D74DBAC25EBB89A00C45554 /* PokemonProviding.swift */,
 				5D74DBAF25EBB8C700C45554 /* PokemonApiProvider.swift */,
+				5D74DBE325EC1AE800C45554 /* FirestoreTeamDataProvider.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -180,6 +192,7 @@
 		5D5EAB8D25EA9EEE00F8C5D6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5D74DBDB25EC171500C45554 /* Teams */,
 				5D5EAB7425EA947B00F8C5D6 /* ViewController.swift */,
 				5D836D8425EAA956002DE605 /* LoginViewController.swift */,
 				5D836D8825EAAA51002DE605 /* SignUpViewController.swift */,
@@ -196,12 +209,33 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		5D74DBDB25EC171500C45554 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				5D74DBDC25EC173400C45554 /* TeamsListViewController.swift */,
+				5D74DBE725EC1E6E00C45554 /* CreateTeamsViewController.swift */,
+				5D74DBEA25EC1EAA00C45554 /* TeamsDetailsViewController.swift */,
+			);
+			path = Teams;
+			sourceTree = "<group>";
+		};
+		5D74DBE025EC1A9B00C45554 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5D836DA325EAB5E1002DE605 /* AuthProviding.swift */,
+				5D74DBAC25EBB89A00C45554 /* PokemonProviding.swift */,
+				5D74DBF125EC33A600C45554 /* TeamDataProviding.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		5D836DB125EAC177002DE605 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				5D836DB325EAC1A4002DE605 /* LoginViewModel.swift */,
 				5D836DCF25EACE20002DE605 /* RegisterViewModel.swift */,
 				5D836E1625EB09DD002DE605 /* HomeViewModel.swift */,
+				5D74DBED25EC313500C45554 /* CreateTeamViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -356,11 +390,13 @@
 				5D836DA425EAB5E1002DE605 /* AuthProviding.swift in Sources */,
 				5D5EAB7525EA947B00F8C5D6 /* ViewController.swift in Sources */,
 				5D74DBB425EBB98200C45554 /* RouteConstants.swift in Sources */,
+				5D74DBE425EC1AE800C45554 /* FirestoreTeamDataProvider.swift in Sources */,
 				5D836DD325EAF7F1002DE605 /* HomeViewController.swift in Sources */,
 				5D74DBB025EBB8C700C45554 /* PokemonApiProvider.swift in Sources */,
 				5D836DAC25EAB8F1002DE605 /* RegisterResponses.swift in Sources */,
 				5D5EAB7125EA947B00F8C5D6 /* AppDelegate.swift in Sources */,
 				5D74DBD825EC10A500C45554 /* TeamsTableViewCell.swift in Sources */,
+				5D74DBF225EC33A600C45554 /* TeamDataProviding.swift in Sources */,
 				5D5EAB8825EA99C800F8C5D6 /* UIView+Extension.swift in Sources */,
 				5D836E3525EB4F1B002DE605 /* Keychain.swift in Sources */,
 				5D836DD025EACE20002DE605 /* RegisterViewModel.swift in Sources */,
@@ -371,7 +407,11 @@
 				5D836DDF25EAFA09002DE605 /* PokemonCollectionViewCell.swift in Sources */,
 				5D836DFC25EB0349002DE605 /* UIImageView+Extension.swift in Sources */,
 				5D74DBCF25EBCB3600C45554 /* URL+Extension.swift in Sources */,
+				5D74DBEE25EC313500C45554 /* CreateTeamViewModel.swift in Sources */,
 				5D836DAF25EAB94B002DE605 /* User.swift in Sources */,
+				5D74DBDD25EC173400C45554 /* TeamsListViewController.swift in Sources */,
+				5D74DBEB25EC1EAA00C45554 /* TeamsDetailsViewController.swift in Sources */,
+				5D74DBE825EC1E6E00C45554 /* CreateTeamsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,6 @@ class HomeViewModel {
 
     private var pokemonService: PokemonProviding
     private var serviceSubscriber = Set<AnyCancellable>()
-    private var customSubscriber: PokemonRequestSubscriber?
 
     init(pokemonService: PokemonProviding = PokemonApiProvider.shared) {
         pokemons = []
@@ -76,30 +75,5 @@ class HomeViewModel {
                 // TODO handleThis
                 print(pokemon.name)
             }
-    }
-}
-
-
-class PokemonRequestSubscriber: Subscriber {
-    func receive(_ input: [Pokemon]) -> Subscribers.Demand {
-        return .none
-    }
-
-    func receive(completion: Subscribers.Completion<Error>) {
-        print("Publisher Completed successfully")
-    }
-
-    typealias Input = [Pokemon]
-
-    typealias Failure = Error
-
-    func receive(subscription: Subscription) {
-        subscription.request(demand)
-    }
-
-    var demand: Subscribers.Demand = .unlimited
-
-    init(demand: Subscribers.Demand) {
-        self.demand = demand
     }
 }
