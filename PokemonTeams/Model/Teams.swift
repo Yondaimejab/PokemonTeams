@@ -12,7 +12,6 @@ class Team: Codable, Hashable, Equatable {
         lhs.id == rhs.id
     }
 
-
     enum TeamError: Error {
         case minimumPokemonsRequiered
 

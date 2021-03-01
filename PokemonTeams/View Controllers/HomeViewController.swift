@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import Anchorage
 
 class HomeViewController: UIViewController {
     typealias PokemonDataSource = UICollectionViewDiffableDataSource<Section, Pokemon>
@@ -108,6 +109,39 @@ class HomeViewController: UIViewController {
 
         }
     }
+
+    private func PresentCopiedItemAlert() {
+        var copyAlertView: UIView! = UIView()
+        copyAlertView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        copyAlertView.layer.opacity = 0.0
+        copyAlertView.cornerRadius = 15
+
+        let messageLabel = UILabel()
+        messageLabel.text = "Se ha Copiado el nombre del pokemon: \(UIPasteboard.general.string ?? "")"
+        messageLabel.textColor = .white
+        messageLabel.font = .systemFont(ofSize: 14)
+        messageLabel.numberOfLines = 0
+
+
+        copyAlertView.addSubview(messageLabel)
+        messageLabel.centerAnchors == copyAlertView.centerAnchors
+        messageLabel.edgeAnchors == copyAlertView.edgeAnchors + UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
+
+        copyAlertView.heightAnchor == 50.0
+        self.view.addSubview(copyAlertView)
+        self.view.bringSubviewToFront(copyAlertView)
+        copyAlertView.leadingAnchor == self.view.leadingAnchor + 20
+        copyAlertView.trailingAnchor == self.view.trailingAnchor - 20.0
+        copyAlertView.bottomAnchor == self.view.bottomAnchor - 80.0
+
+        UIView.animate(withDuration: 4.0, animations: ({
+            copyAlertView.layer.opacity = 1.0
+            copyAlertView.layer.opacity = 0.0
+        }), completion: ({ _ in
+            copyAlertView.removeFromSuperview()
+            copyAlertView = nil
+        }))
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
@@ -131,5 +165,12 @@ extension HomeViewController: UICollectionViewDelegate {
                 }
             }
         }
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? PokemonCollectionViewCell  else { return }
+        guard let pokemonName = cell.pokemonNameLabel.text, pokemonName.isEmpty == false else { return}
+        UIPasteboard.general.string = pokemonName
+        self.PresentCopiedItemAlert()
     }
 }

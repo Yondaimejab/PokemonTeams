@@ -17,6 +17,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
 
     let pokemonImageView = UIImageView()
     let pokemonNameLabel = UILabel()
+    var pokemon: Pokemon?
 
     override init(frame: CGRect) {
         super.init(frame: frame)

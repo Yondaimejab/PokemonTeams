@@ -11,22 +11,24 @@ import Combine
 
 class FirestoreTeamDataProvider: TeamDataProviding {
     static var shared = FirestoreTeamDataProvider()
+    let firebaseDb = Firestore.firestore()
 
-    func create(team: Team) -> AnyPublisher<Bool, Error> {
+    func create(team: FirestoreTeamRepresentation) -> AnyPublisher<Bool, Error> {
+        // TODO
+        // firebaseDb.
+        return Future<Bool, Error> { promise in
+            promise(.success(true))
+        }.eraseToAnyPublisher()
+    }
+
+    func update(team: FirestoreTeamRepresentation) -> AnyPublisher<Bool, Error> {
         // TODO
         return Future<Bool, Error> { promise in
             promise(.success(true))
         }.eraseToAnyPublisher()
     }
 
-    func update(team: Team) -> AnyPublisher<Bool, Error> {
-        // TODO
-        return Future<Bool, Error> { promise in
-            promise(.success(true))
-        }.eraseToAnyPublisher()
-    }
-
-    func listTeams(for user: User) -> AnyPublisher<[Team], Error> {
+    func listTeams(for userID: String) -> AnyPublisher<[Team], Error> {
         // TODO
         let publisher = Future<[Team], Error> { promise in
             promise(

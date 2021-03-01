@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 protocol TeamDataProviding {
-    func create(team: Team) -> AnyPublisher<Bool, Error>
-    func update(team: Team) -> AnyPublisher<Bool, Error>
-    func listTeams(for user: User) -> AnyPublisher<[Team], Error>
+    func create(team: FirestoreTeamRepresentation) -> AnyPublisher<Bool, Error>
+    func update(team: FirestoreTeamRepresentation) -> AnyPublisher<Bool, Error>
+    func listTeams(for userID: String) -> AnyPublisher<[Team], Error>
     func delete(team id: String) -> AnyPublisher<Bool, Error>
 }

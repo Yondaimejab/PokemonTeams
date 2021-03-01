@@ -11,7 +11,7 @@ import Combine
 
 class CreateTeamsViewController: UIViewController {
     typealias TeamsDataSource = UITableViewDiffableDataSource<Sections, Team>
-    typealias PokemonDataSource = UITableViewDiffableDataSource<Sections, Pokemon>
+    // typealias PokemonDataSource = UITableViewDiffableDataSource<Sections, Pokemon>
 
     enum Sections {
         case main
@@ -27,15 +27,16 @@ class CreateTeamsViewController: UIViewController {
     @IBOutlet weak var teamNameLabel: UITextField!
     @IBOutlet weak var pokemonSearchTextField: UITextField!
     @IBOutlet weak var addedPokemonsTableView: UITableView!
+    @IBOutlet weak var saveTeamButton: UIButton!
+    @IBOutlet weak var addPokemonButton: UIButton!
 
 
     // Properties
     var isEditingTeams = false
-    private var searchResultTableView = UITableView()
-    private var searchSubscriber: AnyCancellable?
     private var createViewModel = CreateTeamViewModel()
     private var selectedTeamDataSource: PokemonDataSource!
-    private var searchPokemonDataSource: PokemonDataSource!
+    private var saveButtonEnableSubscriber: AnyCancellable?
+    private var pokemonListSubscriber: AnyCancellable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,41 +45,69 @@ class CreateTeamsViewController: UIViewController {
         pokemonSearchTextField.addSubview(magnifyingglass)
         // Do any additional setup after loading the view.
 
-        searchSubscriber = pokemonSearchTextField.publisher(for: \.text)
-            .didChange().debounce(for: .seconds(3), scheduler: DispatchQueue.main)
-            .sink { (_) in
-            // Send searchEvent
-            }
+        pokemonSearchTextField.delegate = self
 
-        self.view.addSubview(searchResultTableView)
-        searchResultTableView.isHidden = true
-        searchResultTableView.topAnchor == pokemonSearchTextField.bottomAnchor + 12
-        searchResultTableView.leadingAnchor == self.view.leadingAnchor + 20
-        searchResultTableView.trailingAnchor == self.view.trailingAnchor - 20
         setupTableView()
+        subscribeToViewItems()
+    }
+
+    private func subscribeToViewItems() {
+        saveButtonEnableSubscriber = createViewModel.$selectedPokemonsForTeam
+            .sink { [weak self] (pokemonsInTeam) in
+                guard let self = self else {return}
+                guard let labelText = self.teamNameLabel.text, labelText.isEmpty == false else {return self.disableSaveTeamButton()}
+                guard pokemonsInTeam.count >= 3 else { return self.disableSaveTeamButton() }
+                self.enableSaveTeamButton()
+
+                if pokemonsInTeam.count == 6 {
+                    self.addPokemonButton.isEnabled = false
+                    UIView.animate(withDuration: 1.0) {
+                        self.addPokemonButton.layer.opacity = 0.4
+                    }
+                } else if pokemonsInTeam.count < 6, !self.addPokemonButton.isEnabled {
+                    self.addPokemonButton.isEnabled = true
+                    UIView.animate(withDuration: 1.0) {
+                        self.addPokemonButton.layer.opacity = 1.0
+                    }
+                }
+            }
+    }
+
+    func disableSaveTeamButton() {
+        guard saveTeamButton.isEnabled else {return}
+        saveTeamButton.isEnabled = false
+        UIView.animate(withDuration: 1.5) {
+            self.saveTeamButton.layer.opacity = 0.4
+        }
+    }
+
+    func enableSaveTeamButton() {
+        guard !saveTeamButton.isEnabled else {return}
+        saveTeamButton.isEnabled = true
+        UIView.animate(withDuration: 1.0) {
+        self.saveTeamButton.layer.opacity = 1
+        }
     }
 
     private func setupTableView() {
 
-        // Register UItableViewCell for teams
+        addedPokemonsTableView.register(PokemonTableViewCell.self, forCellReuseIdentifier: PokemonTableViewCell.Constants.identifier)
         addedPokemonsTableView.dataSource = selectedTeamDataSource
+        addedPokemonsTableView.rowHeight = 70.0
 
-        selectedTeamDataSource = PokemonDataSource(tableView: searchResultTableView, cellProvider: { (tableView, indexPAth, pokemon) -> UITableViewCell? in
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "asdasd") else {
+        addedPokemonsTableView.delegate = self
+        selectedTeamDataSource = PokemonDataSource(tableView: addedPokemonsTableView, cellProvider: { (tableView, indexPAth, pokemon) -> UITableViewCell? in
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.Constants.identifier) as? PokemonTableViewCell else {
                 fatalError("Could not dequeue cell")
             }
+
+            cell.bindTo(pokemon: pokemon)
 
             return cell
         })
 
-        // register cell for tableView
-        searchResultTableView.dataSource = searchPokemonDataSource
-        searchPokemonDataSource = PokemonDataSource(tableView: searchResultTableView, cellProvider: { (tableView, indexPAth, pokemon) -> UITableViewCell? in
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "asdasd") else {
-                fatalError("Could not dequeue cell")
-            }
-
-            return cell
+        pokemonListSubscriber = createViewModel.$selectedPokemonsForTeam.sink(receiveValue: { [weak self] (pokemonList) in
+            self?.updateDataSourceForSelectedPokemons(list: pokemonList)
         })
     }
 
@@ -89,15 +118,47 @@ class CreateTeamsViewController: UIViewController {
         selectedTeamDataSource.apply(snapshot)
     }
 
-    private func updateDataSourceForSearchResults(list: [Pokemon]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Sections, Pokemon>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(list, toSection: .main)
-        searchPokemonDataSource.apply(snapshot)
+    @IBAction func addPokemon(_ sender: Any) {
+        guard let pokemonName = pokemonSearchTextField.text, pokemonName.isEmpty == false  else {
+            return
+        }
+        createViewModel.searchPokemon(with: pokemonName)
     }
 
-    func toggleSearchResultsActive(isActive: Bool) {
-        searchResultTableView.isHidden = !isActive
-        searchResultTableView.contentSize.height = isActive ? (3.0 * Constants.pokemonSearchResultCellHeight) : 0.0
+    @IBAction func saveTeam(_ sender: Any) {
+        if isEditingTeams {
+            // createViewModel.update(team: )
+        } else {
+            // createViewModel.create(team: )
+        }
+    }
+}
+
+extension CreateTeamsViewController: UITextFieldDelegate, UITableViewDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        guard let pokemonName = textField.text, pokemonName.isEmpty == false  else {
+            return true
+        }
+        createViewModel.searchPokemon(with: pokemonName)
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+       return UISwipeActionsConfiguration(actions: [UIContextualAction(style: .destructive, title: "Delete", handler: { (action, view, completion) in
+            guard let cell = tableView.cellForRow(at: indexPath) as? PokemonTableViewCell else {return}
+            if let pokemon = cell.pokemon {
+                self.createViewModel.selectedPokemonsForTeam.removeAll(where: ({ $0 == pokemon}))
+            }
+            completion(true)
+        })])
+    }
+}
+
+
+// This custom class is made so that swipeActions Work with diffable Datasource
+class PokemonDataSource: UITableViewDiffableDataSource<CreateTeamsViewController.Sections, Pokemon> {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }
