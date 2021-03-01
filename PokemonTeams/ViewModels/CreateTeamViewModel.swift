@@ -21,14 +21,9 @@ class CreateTeamViewModel {
         self.teamsDataProvider = teamsDataProvider
     }
 
-    func createTeam(with name: String, user: String) {
+    func createTeam(with name: String, user: String) -> AnyPublisher<Bool, Error> {
         let teamRepresentable = FirestoreTeamRepresentation(id: "", name: name, userID: user, pokemonIDs: selectedPokemonsForTeam.map({$0.id ?? ""}))
-        teamsDataProvider.create(team: teamRepresentable)
-            .sink { (completion) in
-            print(completion)
-        } receiveValue: { (result) in
-            print(result)
-        }.store(in: &teamRequestSubscribers)
+        return teamsDataProvider.create(team: teamRepresentable)
     }
 
     func update(teamId: String, with name: String, user: String) {

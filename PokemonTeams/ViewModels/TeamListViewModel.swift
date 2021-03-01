@@ -49,7 +49,7 @@ class TeamListViewModel {
                             return try? Team(id: item.id, name: item.name, pokemons: list.filter { $0.id == item.id}.map { $0.pokemon }, user: user)
                         }
 
-                        self.listOfPokemonTeams.append(contentsOf: teamList)
+                        self.listOfPokemonTeams =  teamList
                     }.store(in: &self.teamRequestSubscribers)
 
             }.store(in: &teamRequestSubscribers)

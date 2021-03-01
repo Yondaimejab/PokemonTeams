@@ -37,6 +37,7 @@ class CreateTeamsViewController: UIViewController {
     private var selectedTeamDataSource: PokemonDataSource!
     private var saveButtonEnableSubscriber: AnyCancellable?
     private var pokemonListSubscriber: AnyCancellable?
+    private var requestSubscribers = Set<AnyCancellable>()
 
     var team: Team?
 
@@ -141,10 +142,31 @@ class CreateTeamsViewController: UIViewController {
             if let data = keychain.getData(for: Keychain.Constants.userKey) {
                 if let user = try? JSONDecoder().decode(User.self, from: data) {
                     createViewModel.createTeam(with: teamNameLabel.text ?? "", user: user.id)
+                        .sink { print($0)
+                        } receiveValue: { [weak self]success in
+                            if success {
+                                self?.presentAlert(title: "Exito", message: "se ha creado su equipo") {
+                                    self?.navigationController?.popViewController(animated: true)
+                                }
+                            } else {
+                                self?.presentAlert(title: "Lo sentimos", message: "no se ha podido crear el equipo", completion: {})
+                            }
+                        }.store(in: &requestSubscribers)
                 }
             }
         }
     }
+
+    private func presentAlert(title: String, message:String, completion: @escaping () -> Void) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok.", style: .default) { (_) in
+            alertController.dismiss(animated: true, completion: completion)
+        }
+
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
 extension CreateTeamsViewController: UITextFieldDelegate, UITableViewDelegate {
