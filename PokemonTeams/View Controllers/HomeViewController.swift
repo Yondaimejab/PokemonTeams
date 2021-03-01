@@ -46,10 +46,8 @@ class HomeViewController: UIViewController {
         pokemonSubscriber = homeViewModel.$pokemons.receive(on: RunLoop.main).sink { [weak self] (pokemonList) in
             guard let self = self else {return}
             self.updateDataSource(with: pokemonList)
-            // TODO: remove activity indicator when active
         }
 
-        // TODO: add activity indicator
         getNextPokemons()
         collectionView.refreshControl = actvityIndicator
         collectionView.delegate = self
@@ -142,6 +140,19 @@ class HomeViewController: UIViewController {
             copyAlertView = nil
         }))
     }
+
+    @IBAction func logOut(_ sender: Any) {
+        let keychain = Keychain()
+        keychain.logOut()
+
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+        if let navigationController = storyboard?.instantiateViewController(identifier: "LoginIdentifier") as? UINavigationController {
+            if let window = UIApplication.shared.windows.first {
+                window.rootViewController = navigationController
+            }
+        }
+    }
+
 }
 
 extension HomeViewController: UICollectionViewDelegate {

@@ -30,4 +30,8 @@ class Keychain {
         }
         return nil
     }
+
+    func logOut() {
+        userDefaults.removeObject(forKey: Constants.userKey)
+    }
 }

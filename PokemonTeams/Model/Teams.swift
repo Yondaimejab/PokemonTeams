@@ -23,7 +23,7 @@ class Team: Codable, Hashable, Equatable {
     var id: String
     var name: String
     var user: User
-    private var pokemons: [Pokemon]
+    private(set) var pokemons: [Pokemon]
 
     init(id: String, name: String,  pokemons: [Pokemon], user: User) throws {
         guard pokemons.count >= 3 else {

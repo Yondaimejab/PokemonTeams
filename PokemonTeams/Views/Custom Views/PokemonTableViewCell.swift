@@ -25,7 +25,7 @@ class PokemonTableViewCell: UITableViewCell {
         if let url = pokemon.imageUrl {
             pokemonImage.loadImageFrom(url: url)
         } else {
-            // TODO Set Place Holder Image
+            pokemonImage.image = UIImage(named: "pokemon_placeholder")
         }
 
         pokemonName.text = pokemon.name

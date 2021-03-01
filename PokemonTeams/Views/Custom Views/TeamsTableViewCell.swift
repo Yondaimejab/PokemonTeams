@@ -10,14 +10,12 @@ import Anchorage
 
 class TeamsTableViewCell: UITableViewCell {
 
-    let containerStackView = UIStackView()
-    let mainImage = UIImageView()
-    let secundaryImageStackView = UIStackView()
-    let thirdImageStackView = UIStackView()
-    let lastImageStackView = UIStackView()
+    var containerStackView = UIStackView()
 
     let nameLabel = UILabel()
     let desciprionLabel = UILabel()
+    var images: [UIImageView] = []
+    var team: Team?
 
     enum Constants {
         static let identifier = "TeamsTableViewCell"
@@ -46,30 +44,46 @@ class TeamsTableViewCell: UITableViewCell {
     }
 
     func bindTo(team: Team) {
-        // TODO Bind teams to cell
+        self.team = team
+        nameLabel.text = team.name
+        var pokemonsNames = ""
+
+        for item in team.pokemons {
+            let pokemonImage = UIImageView()
+            if let url = item.imageUrl {
+                pokemonImage.loadImageFrom(url: url)
+            } else {
+                pokemonImage.image = UIImage(named: "pokemon_placeholder")
+            }
+            images.append(pokemonImage)
+            containerStackView.addArrangedSubview(pokemonImage)
+            pokemonsNames += "\(item.name), "
+        }
+        desciprionLabel.text = "Este es un equipo formado por los pokemon \(pokemonsNames) uno de los mejores equipos formados por \(team.user.name)"
     }
 
     // Private
+    override func prepareForReuse() {
+        for item in images {
+            item.removeFromSuperview()
+        }
+    }
 
     private func configure() {
         containerStackView.axis = .horizontal
         containerStackView.spacing = 8
-        secundaryImageStackView.axis = .vertical
-        secundaryImageStackView.spacing = 8
-        thirdImageStackView.spacing = 8
-        thirdImageStackView.axis = .horizontal
-        lastImageStackView.spacing = 8
-        lastImageStackView.axis = .horizontal
         containerStackView.clipsToBounds = true
+        containerStackView.distribution = .fillEqually
+        desciprionLabel.numberOfLines = 0
 
+        nameLabel.font = UIFont(name: "Montserrat-BoldItalic", size: 16)
+        desciprionLabel.font = UIFont(name: "Montserrat-MediumItalic", size: 14)
     }
 
     private func buildInterface() {
         addSubview(containerStackView)
-        containerStackView.addArrangedSubview(mainImage)
-        containerStackView.addArrangedSubview(secundaryImageStackView)
-        secundaryImageStackView.addArrangedSubview(thirdImageStackView)
-        secundaryImageStackView.addArrangedSubview(lastImageStackView)
+        addSubview(nameLabel)
+        addSubview(desciprionLabel)
     }
 
 
@@ -82,7 +96,7 @@ class TeamsTableViewCell: UITableViewCell {
         nameLabel.leadingAnchor == leadingAnchor + 20.0
         nameLabel.leadingAnchor == leadingAnchor + 20.0
         desciprionLabel.topAnchor == nameLabel.bottomAnchor
-        desciprionLabel.leadingAnchor == leadingAnchor + 20.0
-        desciprionLabel.trailingAnchor == trailingAnchor + 20.0
+        desciprionLabel.leadingAnchor == leadingAnchor + 40.0
+        desciprionLabel.trailingAnchor == trailingAnchor - 40.0
     }
 }

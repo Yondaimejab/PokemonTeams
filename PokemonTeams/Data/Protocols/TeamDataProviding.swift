@@ -11,6 +11,6 @@ import Combine
 protocol TeamDataProviding {
     func create(team: FirestoreTeamRepresentation) -> AnyPublisher<Bool, Error>
     func update(team: FirestoreTeamRepresentation) -> AnyPublisher<Bool, Error>
-    func listTeams(for userID: String) -> AnyPublisher<[Team], Error>
+    func listTeams(for userID: String) -> AnyPublisher<[FirestoreTeamRepresentation], Error>
     func delete(team id: String) -> AnyPublisher<Bool, Error>
 }

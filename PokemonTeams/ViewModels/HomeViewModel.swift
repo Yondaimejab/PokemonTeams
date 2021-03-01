@@ -61,19 +61,4 @@ class HomeViewModel {
                 self?.cachedPokemons.append(contentsOf: pokemonList)
             }.store(in: &serviceSubscriber)
     }
-
-    func getPokemon(id: String? = nil, name: String? = nil) {
-        pokemonService.getPokemon(id: id, name: name)
-            .sink { (completion) in
-                switch completion {
-                case .failure(let error):
-                    self.error = error
-                case .finished:
-                    print("Successfully finish request")
-                }
-            } receiveValue: { [weak self] (pokemon) in
-                // TODO handleThis
-                print(pokemon.name)
-            }
-    }
 }

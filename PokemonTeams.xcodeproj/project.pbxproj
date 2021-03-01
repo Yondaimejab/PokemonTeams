@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24840EA2EDD07E7F36DCF9D0 /* Pods_PokemonTeams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1734C66B88B7815200941FF6 /* Pods_PokemonTeams.framework */; };
 		5D5EAB7125EA947B00F8C5D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5EAB7025EA947B00F8C5D6 /* AppDelegate.swift */; };
 		5D5EAB7325EA947B00F8C5D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5EAB7225EA947B00F8C5D6 /* SceneDelegate.swift */; };
 		5D5EAB7525EA947B00F8C5D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5EAB7425EA947B00F8C5D6 /* ViewController.swift */; };
@@ -44,10 +45,40 @@
 		5D836DFC25EB0349002DE605 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836DFB25EB0349002DE605 /* UIImageView+Extension.swift */; };
 		5D836E1725EB09DD002DE605 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836E1625EB09DD002DE605 /* HomeViewModel.swift */; };
 		5D836E3525EB4F1B002DE605 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D836E3425EB4F1A002DE605 /* Keychain.swift */; };
-		E8679561CAAFDA31C3582977 /* Pods_PokemonTeams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A51FAA3B6E96D7A7AA905A5 /* Pods_PokemonTeams.framework */; };
+		5DEDA3C525EC99FE00C2335D /* TeamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEDA3C425EC99FE00C2335D /* TeamListViewModel.swift */; };
+		5DEDA3D125ECBCC500C2335D /* American Captain.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3C825ECBCC500C2335D /* American Captain.otf */; };
+		5DEDA3D225ECBCC500C2335D /* Blacksword.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3C925ECBCC500C2335D /* Blacksword.otf */; };
+		5DEDA3D325ECBCC500C2335D /* Cheveuxdange.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3CA25ECBCC500C2335D /* Cheveuxdange.ttf */; };
+		5DEDA3D425ECBCC500C2335D /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3CB25ECBCC500C2335D /* digital-7.ttf */; };
+		5DEDA3D525ECBCC500C2335D /* DK Cinnabar Brush.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3CC25ECBCC500C2335D /* DK Cinnabar Brush.ttf */; };
+		5DEDA3D625ECBCC500C2335D /* LemonMilk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3CD25ECBCC500C2335D /* LemonMilk.otf */; };
+		5DEDA3D725ECBCC500C2335D /* Moon Flower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3CE25ECBCC500C2335D /* Moon Flower.ttf */; };
+		5DEDA3D825ECBCC500C2335D /* PORKYS_.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3CF25ECBCC500C2335D /* PORKYS_.TTF */; };
+		5DEDA3D925ECBCC500C2335D /* SugarstyleMillenial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3D025ECBCC500C2335D /* SugarstyleMillenial-Regular.ttf */; };
+		5DEDA3EF25ECBE6800C2335D /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3DC25ECBE6800C2335D /* Montserrat-Black.ttf */; };
+		5DEDA3F025ECBE6800C2335D /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3DD25ECBE6800C2335D /* Montserrat-BlackItalic.ttf */; };
+		5DEDA3F125ECBE6800C2335D /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3DE25ECBE6800C2335D /* Montserrat-Bold.ttf */; };
+		5DEDA3F225ECBE6800C2335D /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3DF25ECBE6800C2335D /* Montserrat-BoldItalic.ttf */; };
+		5DEDA3F325ECBE6800C2335D /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3E025ECBE6800C2335D /* Montserrat-ExtraBold.ttf */; };
+		5DEDA3F425ECBE6800C2335D /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3E125ECBE6800C2335D /* Montserrat-ExtraBoldItalic.ttf */; };
+		5DEDA3F525ECBE6800C2335D /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3E225ECBE6800C2335D /* Montserrat-ExtraLight.ttf */; };
+		5DEDA3F625ECBE6800C2335D /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3E325ECBE6800C2335D /* Montserrat-ExtraLightItalic.ttf */; };
+		5DEDA3F725ECBE6800C2335D /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3E425ECBE6800C2335D /* Montserrat-Italic.ttf */; };
+		5DEDA3F825ECBE6800C2335D /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3E525ECBE6800C2335D /* Montserrat-Light.ttf */; };
+		5DEDA3F925ECBE6800C2335D /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3E625ECBE6800C2335D /* Montserrat-LightItalic.ttf */; };
+		5DEDA3FA25ECBE6800C2335D /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3E725ECBE6800C2335D /* Montserrat-Medium.ttf */; };
+		5DEDA3FB25ECBE6800C2335D /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3E825ECBE6800C2335D /* Montserrat-MediumItalic.ttf */; };
+		5DEDA3FC25ECBE6800C2335D /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3E925ECBE6800C2335D /* Montserrat-Regular.ttf */; };
+		5DEDA3FD25ECBE6800C2335D /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3EA25ECBE6800C2335D /* Montserrat-SemiBold.ttf */; };
+		5DEDA3FE25ECBE6800C2335D /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3EB25ECBE6800C2335D /* Montserrat-SemiBoldItalic.ttf */; };
+		5DEDA3FF25ECBE6800C2335D /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3EC25ECBE6800C2335D /* Montserrat-Thin.ttf */; };
+		5DEDA40025ECBE6800C2335D /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3ED25ECBE6800C2335D /* Montserrat-ThinItalic.ttf */; };
+		5DEDA40125ECBE6800C2335D /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5DEDA3EE25ECBE6800C2335D /* OFL.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1734C66B88B7815200941FF6 /* Pods_PokemonTeams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonTeams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		442D9FE2DB921A062C567580 /* Pods-PokemonTeams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonTeams.release.xcconfig"; path = "Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams.release.xcconfig"; sourceTree = "<group>"; };
 		5D5EAB6D25EA947B00F8C5D6 /* PokemonTeams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonTeams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5EAB7025EA947B00F8C5D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D5EAB7225EA947B00F8C5D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,9 +118,36 @@
 		5D836DFB25EB0349002DE605 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		5D836E1625EB09DD002DE605 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5D836E3425EB4F1A002DE605 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		5EE30CD62338DEEF800BB9CD /* Pods-PokemonTeams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonTeams.release.xcconfig"; path = "Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams.release.xcconfig"; sourceTree = "<group>"; };
-		7A51FAA3B6E96D7A7AA905A5 /* Pods_PokemonTeams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PokemonTeams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD97816581C51F9FFFB31A7B /* Pods-PokemonTeams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonTeams.debug.xcconfig"; path = "Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams.debug.xcconfig"; sourceTree = "<group>"; };
+		5DEDA3C425EC99FE00C2335D /* TeamListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewModel.swift; sourceTree = "<group>"; };
+		5DEDA3C825ECBCC500C2335D /* American Captain.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "American Captain.otf"; sourceTree = "<group>"; };
+		5DEDA3C925ECBCC500C2335D /* Blacksword.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Blacksword.otf; sourceTree = "<group>"; };
+		5DEDA3CA25ECBCC500C2335D /* Cheveuxdange.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cheveuxdange.ttf; sourceTree = "<group>"; };
+		5DEDA3CB25ECBCC500C2335D /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
+		5DEDA3CC25ECBCC500C2335D /* DK Cinnabar Brush.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DK Cinnabar Brush.ttf"; sourceTree = "<group>"; };
+		5DEDA3CD25ECBCC500C2335D /* LemonMilk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = LemonMilk.otf; sourceTree = "<group>"; };
+		5DEDA3CE25ECBCC500C2335D /* Moon Flower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Moon Flower.ttf"; sourceTree = "<group>"; };
+		5DEDA3CF25ECBCC500C2335D /* PORKYS_.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = PORKYS_.TTF; sourceTree = "<group>"; };
+		5DEDA3D025ECBCC500C2335D /* SugarstyleMillenial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SugarstyleMillenial-Regular.ttf"; sourceTree = "<group>"; };
+		5DEDA3DC25ECBE6800C2335D /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		5DEDA3DD25ECBE6800C2335D /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		5DEDA3DE25ECBE6800C2335D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		5DEDA3DF25ECBE6800C2335D /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		5DEDA3E025ECBE6800C2335D /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		5DEDA3E125ECBE6800C2335D /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		5DEDA3E225ECBE6800C2335D /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		5DEDA3E325ECBE6800C2335D /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		5DEDA3E425ECBE6800C2335D /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		5DEDA3E525ECBE6800C2335D /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		5DEDA3E625ECBE6800C2335D /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		5DEDA3E725ECBE6800C2335D /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		5DEDA3E825ECBE6800C2335D /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		5DEDA3E925ECBE6800C2335D /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		5DEDA3EA25ECBE6800C2335D /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		5DEDA3EB25ECBE6800C2335D /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		5DEDA3EC25ECBE6800C2335D /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		5DEDA3ED25ECBE6800C2335D /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		5DEDA3EE25ECBE6800C2335D /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		D1F02E7619B3962988331096 /* Pods-PokemonTeams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokemonTeams.debug.xcconfig"; path = "Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8679561CAAFDA31C3582977 /* Pods_PokemonTeams.framework in Frameworks */,
+				24840EA2EDD07E7F36DCF9D0 /* Pods_PokemonTeams.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +168,7 @@
 				5D5EAB6F25EA947B00F8C5D6 /* PokemonTeams */,
 				5D5EAB6E25EA947B00F8C5D6 /* Products */,
 				8BBF465D5AFDBC6045B7FEBE /* Pods */,
-				DBBFF205D2BA442A377484A1 /* Frameworks */,
+				F845A086FC311002789A8979 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +200,7 @@
 		5D5EAB8525EA99B500F8C5D6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5DEDA3C725ECBCC500C2335D /* Custom Fonts */,
 				5D5EAB8625EA99BB00F8C5D6 /* Extension */,
 				5D836D8B25EAB186002DE605 /* GoogleService-Info.plist */,
 				5D836E3425EB4F1A002DE605 /* Keychain.swift */,
@@ -241,6 +300,7 @@
 				5D836DCF25EACE20002DE605 /* RegisterViewModel.swift */,
 				5D836E1625EB09DD002DE605 /* HomeViewModel.swift */,
 				5D74DBED25EC313500C45554 /* CreateTeamViewModel.swift */,
+				5DEDA3C425EC99FE00C2335D /* TeamListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -255,19 +315,62 @@
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
+		5DEDA3C725ECBCC500C2335D /* Custom Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5DEDA3DB25ECBE6800C2335D /* Montserrat */,
+				5DEDA3C825ECBCC500C2335D /* American Captain.otf */,
+				5DEDA3C925ECBCC500C2335D /* Blacksword.otf */,
+				5DEDA3CA25ECBCC500C2335D /* Cheveuxdange.ttf */,
+				5DEDA3CB25ECBCC500C2335D /* digital-7.ttf */,
+				5DEDA3CC25ECBCC500C2335D /* DK Cinnabar Brush.ttf */,
+				5DEDA3CD25ECBCC500C2335D /* LemonMilk.otf */,
+				5DEDA3CE25ECBCC500C2335D /* Moon Flower.ttf */,
+				5DEDA3CF25ECBCC500C2335D /* PORKYS_.TTF */,
+				5DEDA3D025ECBCC500C2335D /* SugarstyleMillenial-Regular.ttf */,
+			);
+			path = "Custom Fonts";
+			sourceTree = "<group>";
+		};
+		5DEDA3DB25ECBE6800C2335D /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				5DEDA3DC25ECBE6800C2335D /* Montserrat-Black.ttf */,
+				5DEDA3DD25ECBE6800C2335D /* Montserrat-BlackItalic.ttf */,
+				5DEDA3DE25ECBE6800C2335D /* Montserrat-Bold.ttf */,
+				5DEDA3DF25ECBE6800C2335D /* Montserrat-BoldItalic.ttf */,
+				5DEDA3E025ECBE6800C2335D /* Montserrat-ExtraBold.ttf */,
+				5DEDA3E125ECBE6800C2335D /* Montserrat-ExtraBoldItalic.ttf */,
+				5DEDA3E225ECBE6800C2335D /* Montserrat-ExtraLight.ttf */,
+				5DEDA3E325ECBE6800C2335D /* Montserrat-ExtraLightItalic.ttf */,
+				5DEDA3E425ECBE6800C2335D /* Montserrat-Italic.ttf */,
+				5DEDA3E525ECBE6800C2335D /* Montserrat-Light.ttf */,
+				5DEDA3E625ECBE6800C2335D /* Montserrat-LightItalic.ttf */,
+				5DEDA3E725ECBE6800C2335D /* Montserrat-Medium.ttf */,
+				5DEDA3E825ECBE6800C2335D /* Montserrat-MediumItalic.ttf */,
+				5DEDA3E925ECBE6800C2335D /* Montserrat-Regular.ttf */,
+				5DEDA3EA25ECBE6800C2335D /* Montserrat-SemiBold.ttf */,
+				5DEDA3EB25ECBE6800C2335D /* Montserrat-SemiBoldItalic.ttf */,
+				5DEDA3EC25ECBE6800C2335D /* Montserrat-Thin.ttf */,
+				5DEDA3ED25ECBE6800C2335D /* Montserrat-ThinItalic.ttf */,
+				5DEDA3EE25ECBE6800C2335D /* OFL.txt */,
+			);
+			path = Montserrat;
+			sourceTree = "<group>";
+		};
 		8BBF465D5AFDBC6045B7FEBE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AD97816581C51F9FFFB31A7B /* Pods-PokemonTeams.debug.xcconfig */,
-				5EE30CD62338DEEF800BB9CD /* Pods-PokemonTeams.release.xcconfig */,
+				D1F02E7619B3962988331096 /* Pods-PokemonTeams.debug.xcconfig */,
+				442D9FE2DB921A062C567580 /* Pods-PokemonTeams.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		DBBFF205D2BA442A377484A1 /* Frameworks */ = {
+		F845A086FC311002789A8979 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7A51FAA3B6E96D7A7AA905A5 /* Pods_PokemonTeams.framework */,
+				1734C66B88B7815200941FF6 /* Pods_PokemonTeams.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -279,11 +382,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D5EAB8125EA947C00F8C5D6 /* Build configuration list for PBXNativeTarget "PokemonTeams" */;
 			buildPhases = (
-				1FA92792C018825C744F5224 /* [CP] Check Pods Manifest.lock */,
+				2AD53A0DB1E331EBBA0409E5 /* [CP] Check Pods Manifest.lock */,
 				5D5EAB6925EA947B00F8C5D6 /* Sources */,
 				5D5EAB6A25EA947B00F8C5D6 /* Frameworks */,
 				5D5EAB6B25EA947B00F8C5D6 /* Resources */,
-				030B8B1CF843F48F129E76C0 /* [CP] Embed Pods Frameworks */,
+				B6C418835480896314B611FE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -331,34 +434,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DEDA3D725ECBCC500C2335D /* Moon Flower.ttf in Resources */,
+				5DEDA3FA25ECBE6800C2335D /* Montserrat-Medium.ttf in Resources */,
+				5DEDA3F425ECBE6800C2335D /* Montserrat-ExtraBoldItalic.ttf in Resources */,
+				5DEDA3EF25ECBE6800C2335D /* Montserrat-Black.ttf in Resources */,
+				5DEDA3D925ECBCC500C2335D /* SugarstyleMillenial-Regular.ttf in Resources */,
+				5DEDA3F225ECBE6800C2335D /* Montserrat-BoldItalic.ttf in Resources */,
+				5DEDA3F025ECBE6800C2335D /* Montserrat-BlackItalic.ttf in Resources */,
 				5D5EAB7D25EA947C00F8C5D6 /* LaunchScreen.storyboard in Resources */,
+				5DEDA3D825ECBCC500C2335D /* PORKYS_.TTF in Resources */,
+				5DEDA3FC25ECBE6800C2335D /* Montserrat-Regular.ttf in Resources */,
+				5DEDA3FF25ECBE6800C2335D /* Montserrat-Thin.ttf in Resources */,
+				5DEDA3FD25ECBE6800C2335D /* Montserrat-SemiBold.ttf in Resources */,
+				5DEDA3F925ECBE6800C2335D /* Montserrat-LightItalic.ttf in Resources */,
+				5DEDA3F325ECBE6800C2335D /* Montserrat-ExtraBold.ttf in Resources */,
+				5DEDA3F525ECBE6800C2335D /* Montserrat-ExtraLight.ttf in Resources */,
+				5DEDA3F825ECBE6800C2335D /* Montserrat-Light.ttf in Resources */,
 				5D836D8C25EAB186002DE605 /* GoogleService-Info.plist in Resources */,
+				5DEDA3FE25ECBE6800C2335D /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				5DEDA3FB25ECBE6800C2335D /* Montserrat-MediumItalic.ttf in Resources */,
+				5DEDA40025ECBE6800C2335D /* Montserrat-ThinItalic.ttf in Resources */,
+				5DEDA3D525ECBCC500C2335D /* DK Cinnabar Brush.ttf in Resources */,
+				5DEDA3D325ECBCC500C2335D /* Cheveuxdange.ttf in Resources */,
+				5DEDA40125ECBE6800C2335D /* OFL.txt in Resources */,
+				5DEDA3F725ECBE6800C2335D /* Montserrat-Italic.ttf in Resources */,
+				5DEDA3D425ECBCC500C2335D /* digital-7.ttf in Resources */,
+				5DEDA3D125ECBCC500C2335D /* American Captain.otf in Resources */,
 				5D5EAB7A25EA947C00F8C5D6 /* Assets.xcassets in Resources */,
+				5DEDA3F125ECBE6800C2335D /* Montserrat-Bold.ttf in Resources */,
 				5D5EAB7825EA947B00F8C5D6 /* Main.storyboard in Resources */,
+				5DEDA3D625ECBCC500C2335D /* LemonMilk.otf in Resources */,
+				5DEDA3D225ECBCC500C2335D /* Blacksword.otf in Resources */,
+				5DEDA3F625ECBE6800C2335D /* Montserrat-ExtraLightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		030B8B1CF843F48F129E76C0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1FA92792C018825C744F5224 /* [CP] Check Pods Manifest.lock */ = {
+		2AD53A0DB1E331EBBA0409E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -378,6 +492,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6C418835480896314B611FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PokemonTeams/Pods-PokemonTeams-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -414,6 +545,7 @@
 				5D836DDF25EAFA09002DE605 /* PokemonCollectionViewCell.swift in Sources */,
 				5D836DFC25EB0349002DE605 /* UIImageView+Extension.swift in Sources */,
 				5D74DBCF25EBCB3600C45554 /* URL+Extension.swift in Sources */,
+				5DEDA3C525EC99FE00C2335D /* TeamListViewModel.swift in Sources */,
 				5D74DBF625EC577700C45554 /* PokemonTableViewCell.swift in Sources */,
 				5D74DBEE25EC313500C45554 /* CreateTeamViewModel.swift in Sources */,
 				5D836DAF25EAB94B002DE605 /* User.swift in Sources */,
@@ -563,7 +695,7 @@
 		};
 		5D5EAB8225EA947C00F8C5D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD97816581C51F9FFFB31A7B /* Pods-PokemonTeams.debug.xcconfig */;
+			baseConfigurationReference = D1F02E7619B3962988331096 /* Pods-PokemonTeams.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -583,7 +715,7 @@
 		};
 		5D5EAB8325EA947C00F8C5D6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5EE30CD62338DEEF800BB9CD /* Pods-PokemonTeams.release.xcconfig */;
+			baseConfigurationReference = 442D9FE2DB921A062C567580 /* Pods-PokemonTeams.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -38,6 +38,8 @@ class CreateTeamsViewController: UIViewController {
     private var saveButtonEnableSubscriber: AnyCancellable?
     private var pokemonListSubscriber: AnyCancellable?
 
+    var team: Team?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let magnifyingglass = UIImageView(image: UIImage(systemName: "magnifyingglass"))
@@ -109,6 +111,11 @@ class CreateTeamsViewController: UIViewController {
         pokemonListSubscriber = createViewModel.$selectedPokemonsForTeam.sink(receiveValue: { [weak self] (pokemonList) in
             self?.updateDataSourceForSelectedPokemons(list: pokemonList)
         })
+
+        if isEditingTeams, let teamToEdit = team {
+            teamNameLabel.text = teamToEdit.name
+            createViewModel.selectedPokemonsForTeam.append(contentsOf: teamToEdit.pokemons)
+        }
     }
 
     private func updateDataSourceForSelectedPokemons(list: [Pokemon]) {
@@ -127,9 +134,15 @@ class CreateTeamsViewController: UIViewController {
 
     @IBAction func saveTeam(_ sender: Any) {
         if isEditingTeams {
-            // createViewModel.update(team: )
+            guard let teamToUpdate = team else {return}
+            createViewModel.update(teamId: teamToUpdate.id, with: teamNameLabel.text ?? "", user: teamToUpdate.user.id)
         } else {
-            // createViewModel.create(team: )
+            let keychain = Keychain()
+            if let data = keychain.getData(for: Keychain.Constants.userKey) {
+                if let user = try? JSONDecoder().decode(User.self, from: data) {
+                    createViewModel.createTeam(with: teamNameLabel.text ?? "", user: user.id)
+                }
+            }
         }
     }
 }

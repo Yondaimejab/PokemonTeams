@@ -47,6 +47,7 @@ class PokemonCollectionViewCell: UICollectionViewCell {
         self.pokemonImageView.cornerRadius = 10
         self.pokemonImageView.layer.masksToBounds = true
         self.pokemonNameLabel.textAlignment = .center
+        self.pokemonNameLabel.font = UIFont(name: "Montserrat-MediumItalic", size: 14)
         pokemonNameLabel.font = .systemFont(ofSize: 16)
     }
 
